@@ -186,7 +186,7 @@ func writeToTmp(data []byte) (string, argoio.Closer, error) {
 }
 
 func (c *Cmd) Fetch(repo, chartName, version, destination string, creds Creds, passCredentials bool) (string, error) {
-	var prov = true
+	var prov = false
 	args := []string{c.pullCommand, "--destination", destination}
 	if version != "" {
 		args = append(args, "--version", version)
